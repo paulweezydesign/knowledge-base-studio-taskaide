@@ -1,0 +1,910 @@
+{
+  "root": {
+    "type": "root",
+    "children": [
+      {
+        "type": "text",
+        "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "text": {
+          "ops": [
+            {
+              "insert": "Knowledge Base"
+            },
+            {
+              "insert": "\n",
+              "attributes": {
+                "paragraph": true
+              }
+            }
+          ]
+        },
+        "format": null,
+        "collapsed": false,
+        "completed": false,
+        "children": [
+          {
+            "type": "text",
+            "id": "b2dc13b8-3e7d-42f7-8610-b3ad98837fc7",
+            "text": {
+              "ops": [
+                {
+                  "insert": "Mastra.ai Typescript framework for Agents"
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "paragraph": true
+                  }
+                }
+              ]
+            },
+            "format": {
+              "node": "checkbox",
+              "children": null
+            },
+            "collapsed": false,
+            "completed": false,
+            "attributes": {
+              "@kbSum": "Mastra is a TypeScript framework for rapidly prototyping and shipping production-ready AI agents, with a one-command project setup and integrations for major web frameworks like Next.js, React, Astro, Express, SvelteKit, and Hono. It supports a wide range of use cases—customer-facing assistants, internal copilots, data analysis agents, content automation, DevOps workflows, and sales/GTM automation—backed by templates and real-world deployments at companies such as Replit, Sanity, SoftBank, and WorkOS.",
+              "@kbStat": {
+                "type": "Select",
+                "optionId": "stat-absorbed"
+              },
+              "@kbSrc": "https://mastra.ai/docs",
+              "@kbCat": {
+                "type": "Select",
+                "optionId": "cat-other"
+              }
+            },
+            "children": []
+          },
+          {
+            "type": "text",
+            "id": "e8f6a4c2-1b9d-4c0a-9f2e-1d3b5a7c9e01",
+            "text": {
+              "ops": [
+                {
+                  "insert": "React Official Documentation Overview",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "paragraph": true
+                  }
+                }
+              ]
+            },
+            "format": {
+              "node": "checkbox",
+              "children": null
+            },
+            "collapsed": false,
+            "completed": false,
+            "attributes": {
+              "@kbCat": {
+                "type": "Select",
+                "optionId": "cat-other"
+              },
+              "@kbSrc": "https://react.dev",
+              "@kbSum": "React.dev presents React as a component-based library for building web and native interfaces with JavaScript and JSX. It highlights interactive UI patterns with state, recommends full-stack frameworks for complete apps, and emphasizes React's long-term stability, ecosystem depth, and large global community.",
+              "@kbStat": {
+                "type": "Select",
+                "optionId": "stat-absorbed"
+              }
+            },
+            "children": []
+          },
+          {
+            "type": "text",
+            "id": "b1c2d3e4-f5a6-7890-bcde-f12345678901",
+            "text": {
+              "ops": [
+                {
+                  "insert": "The Future of AI in Healthcare",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "paragraph": true
+                  }
+                }
+              ]
+            },
+            "format": {
+              "node": "checkbox",
+              "children": null
+            },
+            "collapsed": false,
+            "completed": false,
+            "attributes": {
+              "@kbCat": {
+                "type": "Select",
+                "optionId": "cat-health"
+              },
+              "@kbSrc": "https://www.nature.com/articles/ai-healthcare",
+              "@kbSum": "AI is transforming diagnostics, drug discovery, and personalized medicine through large-scale pattern recognition in medical data.",
+              "@kbStat": {
+                "type": "Select",
+                "optionId": "stat-absorbed"
+              }
+            },
+            "children": []
+          },
+          {
+            "type": "text",
+            "id": "c2d3e4f5-a6b7-8901-cdef-123456789012",
+            "text": {
+              "ops": [
+                {
+                  "insert": "Quantum Computing: Breaking RSA Encryption",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "paragraph": true
+                  }
+                }
+              ]
+            },
+            "format": {
+              "node": "checkbox",
+              "children": null
+            },
+            "collapsed": false,
+            "completed": false,
+            "attributes": {
+              "@kbCat": {
+                "type": "Select",
+                "optionId": "cat-tech"
+              },
+              "@kbSrc": "https://arxiv.org/abs/quantum-rsa",
+              "@kbSum": "Quantum algorithms like Shor's can theoretically break RSA-2048 encryption, prompting the shift to post-quantum cryptographic standards.",
+              "@kbStat": {
+                "type": "Select",
+                "optionId": "stat-absorbed"
+              }
+            },
+            "children": []
+          },
+          {
+            "type": "text",
+            "id": "d3e4f5a6-b7c8-9012-defa-234567890123",
+            "text": {
+              "ops": [
+                {
+                  "insert": "Carbon Capture Technology Overview",
+                  "attributes": {}
+                },
+                {
+                  "insert": "\n",
+                  "attributes": {
+                    "paragraph": true
+                  }
+                }
+              ]
+            },
+            "format": {
+              "node": "checkbox",
+              "children": null
+            },
+            "collapsed": false,
+            "completed": false,
+            "attributes": {
+              "@kbCat": {
+                "type": "Select",
+                "optionId": "cat-science"
+              },
+              "@kbSrc": "https://www.iea.org/reports/carbon-capture",
+              "@kbSum": "Direct air capture (DAC) and bioenergy with CCS are emerging as scalable solutions to remove CO2 from the atmosphere at gigaton scale.",
+              "@kbStat": {
+                "type": "Select",
+                "optionId": "stat-absorbed"
+              }
+            },
+            "children": []
+          }
+        ]
+      }
+    ],
+    "views": {
+      "list": {
+        "id": "list",
+        "type": "list",
+        "rank": "A",
+        "displayedFields": {
+          "/text": {
+            "id": "/text",
+            "fieldPath": "/text",
+            "rank": "7"
+          },
+          "/attributes/agent": {
+            "id": "/attributes/agent",
+            "fieldPath": "/attributes/agent",
+            "rank": "A"
+          },
+          "/attributes/date": {
+            "id": "/attributes/date",
+            "fieldPath": "/attributes/date",
+            "rank": "F"
+          },
+          "/attributes/assignee": {
+            "id": "/attributes/assignee",
+            "fieldPath": "/attributes/assignee",
+            "rank": "N"
+          },
+          "/attributes/comment": {
+            "id": "/attributes/comment",
+            "fieldPath": "/attributes/comment",
+            "rank": "V"
+          },
+          "/attributes/reaction": {
+            "id": "/attributes/reaction",
+            "fieldPath": "/attributes/reaction",
+            "rank": "c"
+          },
+          "/attributes/timer": {
+            "id": "/attributes/timer",
+            "fieldPath": "/attributes/timer",
+            "rank": "k"
+          },
+          "/attributes/media": {
+            "id": "/attributes/media",
+            "fieldPath": "/attributes/media",
+            "rank": "s"
+          },
+          "/attributes/created/at": {
+            "id": "/attributes/created/at",
+            "fieldPath": "/attributes/created/at",
+            "rank": "t"
+          },
+          "/attributes/created/by": {
+            "id": "/attributes/created/by",
+            "fieldPath": "/attributes/created/by",
+            "rank": "u"
+          },
+          "/attributes/updated/at": {
+            "id": "/attributes/updated/at",
+            "fieldPath": "/attributes/updated/at",
+            "rank": "vF"
+          },
+          "/attributes/updated/by": {
+            "id": "/attributes/updated/by",
+            "fieldPath": "/attributes/updated/by",
+            "rank": "wF"
+          },
+          "/attributes/completed/at": {
+            "id": "/attributes/completed/at",
+            "fieldPath": "/attributes/completed/at",
+            "rank": "x"
+          },
+          "/attributes/completed/by": {
+            "id": "/attributes/completed/by",
+            "fieldPath": "/attributes/completed/by",
+            "rank": "y"
+          },
+          "/attributes/@kbCat": {
+            "id": "/attributes/@kbCat",
+            "fieldPath": "/attributes/@kbCat",
+            "rank": "z"
+          },
+          "/attributes/@kbSrc": {
+            "id": "/attributes/@kbSrc",
+            "fieldPath": "/attributes/@kbSrc",
+            "rank": "zV"
+          },
+          "/attributes/@kbSum": {
+            "id": "/attributes/@kbSum",
+            "fieldPath": "/attributes/@kbSum",
+            "rank": "zk"
+          },
+          "/attributes/@kbStat": {
+            "id": "/attributes/@kbStat",
+            "fieldPath": "/attributes/@kbStat",
+            "rank": "zs"
+          }
+        }
+      },
+      "board": {
+        "id": "board",
+        "type": "board",
+        "rank": "B",
+        "displayedFields": {
+          "/text": {
+            "id": "/text",
+            "fieldPath": "/text",
+            "rank": "7"
+          },
+          "/attributes/agent": {
+            "id": "/attributes/agent",
+            "fieldPath": "/attributes/agent",
+            "rank": "A"
+          },
+          "/attributes/date": {
+            "id": "/attributes/date",
+            "fieldPath": "/attributes/date",
+            "rank": "F"
+          },
+          "/attributes/assignee": {
+            "id": "/attributes/assignee",
+            "fieldPath": "/attributes/assignee",
+            "rank": "N"
+          },
+          "/attributes/comment": {
+            "id": "/attributes/comment",
+            "fieldPath": "/attributes/comment",
+            "rank": "V"
+          },
+          "/attributes/reaction": {
+            "id": "/attributes/reaction",
+            "fieldPath": "/attributes/reaction",
+            "rank": "c"
+          },
+          "/attributes/timer": {
+            "id": "/attributes/timer",
+            "fieldPath": "/attributes/timer",
+            "rank": "k"
+          },
+          "/attributes/media": {
+            "id": "/attributes/media",
+            "fieldPath": "/attributes/media",
+            "rank": "s"
+          },
+          "/attributes/created/at": {
+            "id": "/attributes/created/at",
+            "fieldPath": "/attributes/created/at",
+            "rank": "t"
+          },
+          "/attributes/created/by": {
+            "id": "/attributes/created/by",
+            "fieldPath": "/attributes/created/by",
+            "rank": "u"
+          },
+          "/attributes/updated/at": {
+            "id": "/attributes/updated/at",
+            "fieldPath": "/attributes/updated/at",
+            "rank": "vF"
+          },
+          "/attributes/updated/by": {
+            "id": "/attributes/updated/by",
+            "fieldPath": "/attributes/updated/by",
+            "rank": "wF"
+          },
+          "/attributes/completed/at": {
+            "id": "/attributes/completed/at",
+            "fieldPath": "/attributes/completed/at",
+            "rank": "x"
+          },
+          "/attributes/completed/by": {
+            "id": "/attributes/completed/by",
+            "fieldPath": "/attributes/completed/by",
+            "rank": "y"
+          },
+          "/attributes/@kbCat": {
+            "id": "/attributes/@kbCat",
+            "fieldPath": "/attributes/@kbCat",
+            "rank": "z"
+          },
+          "/attributes/@kbSrc": {
+            "id": "/attributes/@kbSrc",
+            "fieldPath": "/attributes/@kbSrc",
+            "rank": "zV"
+          },
+          "/attributes/@kbSum": {
+            "id": "/attributes/@kbSum",
+            "fieldPath": "/attributes/@kbSum",
+            "rank": "zk"
+          },
+          "/attributes/@kbStat": {
+            "id": "/attributes/@kbStat",
+            "fieldPath": "/attributes/@kbStat",
+            "rank": "zs"
+          }
+        }
+      },
+      "mindmap": {
+        "id": "mindmap",
+        "type": "mindmap",
+        "rank": "D",
+        "displayedFields": {
+          "/text": {
+            "id": "/text",
+            "fieldPath": "/text",
+            "rank": "7"
+          },
+          "/attributes/agent": {
+            "id": "/attributes/agent",
+            "fieldPath": "/attributes/agent",
+            "rank": "A"
+          },
+          "/attributes/date": {
+            "id": "/attributes/date",
+            "fieldPath": "/attributes/date",
+            "rank": "F"
+          },
+          "/attributes/assignee": {
+            "id": "/attributes/assignee",
+            "fieldPath": "/attributes/assignee",
+            "rank": "N"
+          },
+          "/attributes/comment": {
+            "id": "/attributes/comment",
+            "fieldPath": "/attributes/comment",
+            "rank": "V"
+          },
+          "/attributes/reaction": {
+            "id": "/attributes/reaction",
+            "fieldPath": "/attributes/reaction",
+            "rank": "c"
+          },
+          "/attributes/timer": {
+            "id": "/attributes/timer",
+            "fieldPath": "/attributes/timer",
+            "rank": "k"
+          },
+          "/attributes/media": {
+            "id": "/attributes/media",
+            "fieldPath": "/attributes/media",
+            "rank": "s"
+          },
+          "/attributes/created/at": {
+            "id": "/attributes/created/at",
+            "fieldPath": "/attributes/created/at",
+            "rank": "t"
+          },
+          "/attributes/created/by": {
+            "id": "/attributes/created/by",
+            "fieldPath": "/attributes/created/by",
+            "rank": "u"
+          },
+          "/attributes/updated/at": {
+            "id": "/attributes/updated/at",
+            "fieldPath": "/attributes/updated/at",
+            "rank": "vF"
+          },
+          "/attributes/updated/by": {
+            "id": "/attributes/updated/by",
+            "fieldPath": "/attributes/updated/by",
+            "rank": "wF"
+          },
+          "/attributes/completed/at": {
+            "id": "/attributes/completed/at",
+            "fieldPath": "/attributes/completed/at",
+            "rank": "x"
+          },
+          "/attributes/completed/by": {
+            "id": "/attributes/completed/by",
+            "fieldPath": "/attributes/completed/by",
+            "rank": "y"
+          },
+          "/attributes/@kbCat": {
+            "id": "/attributes/@kbCat",
+            "fieldPath": "/attributes/@kbCat",
+            "rank": "z"
+          },
+          "/attributes/@kbSrc": {
+            "id": "/attributes/@kbSrc",
+            "fieldPath": "/attributes/@kbSrc",
+            "rank": "zV"
+          },
+          "/attributes/@kbSum": {
+            "id": "/attributes/@kbSum",
+            "fieldPath": "/attributes/@kbSum",
+            "rank": "zk"
+          },
+          "/attributes/@kbStat": {
+            "id": "/attributes/@kbStat",
+            "fieldPath": "/attributes/@kbStat",
+            "rank": "zs"
+          }
+        }
+      },
+      "orgchart": {
+        "id": "orgchart",
+        "type": "orgchart",
+        "rank": "E",
+        "displayedFields": {
+          "/text": {
+            "id": "/text",
+            "fieldPath": "/text",
+            "rank": "7"
+          },
+          "/attributes/agent": {
+            "id": "/attributes/agent",
+            "fieldPath": "/attributes/agent",
+            "rank": "A"
+          },
+          "/attributes/date": {
+            "id": "/attributes/date",
+            "fieldPath": "/attributes/date",
+            "rank": "F"
+          },
+          "/attributes/assignee": {
+            "id": "/attributes/assignee",
+            "fieldPath": "/attributes/assignee",
+            "rank": "N"
+          },
+          "/attributes/comment": {
+            "id": "/attributes/comment",
+            "fieldPath": "/attributes/comment",
+            "rank": "V"
+          },
+          "/attributes/reaction": {
+            "id": "/attributes/reaction",
+            "fieldPath": "/attributes/reaction",
+            "rank": "c"
+          },
+          "/attributes/timer": {
+            "id": "/attributes/timer",
+            "fieldPath": "/attributes/timer",
+            "rank": "k"
+          },
+          "/attributes/media": {
+            "id": "/attributes/media",
+            "fieldPath": "/attributes/media",
+            "rank": "s"
+          },
+          "/attributes/created/at": {
+            "id": "/attributes/created/at",
+            "fieldPath": "/attributes/created/at",
+            "rank": "t"
+          },
+          "/attributes/created/by": {
+            "id": "/attributes/created/by",
+            "fieldPath": "/attributes/created/by",
+            "rank": "u"
+          },
+          "/attributes/updated/at": {
+            "id": "/attributes/updated/at",
+            "fieldPath": "/attributes/updated/at",
+            "rank": "vF"
+          },
+          "/attributes/updated/by": {
+            "id": "/attributes/updated/by",
+            "fieldPath": "/attributes/updated/by",
+            "rank": "wF"
+          },
+          "/attributes/completed/at": {
+            "id": "/attributes/completed/at",
+            "fieldPath": "/attributes/completed/at",
+            "rank": "x"
+          },
+          "/attributes/completed/by": {
+            "id": "/attributes/completed/by",
+            "fieldPath": "/attributes/completed/by",
+            "rank": "y"
+          },
+          "/attributes/@kbCat": {
+            "id": "/attributes/@kbCat",
+            "fieldPath": "/attributes/@kbCat",
+            "rank": "z"
+          },
+          "/attributes/@kbSrc": {
+            "id": "/attributes/@kbSrc",
+            "fieldPath": "/attributes/@kbSrc",
+            "rank": "zV"
+          },
+          "/attributes/@kbSum": {
+            "id": "/attributes/@kbSum",
+            "fieldPath": "/attributes/@kbSum",
+            "rank": "zk"
+          },
+          "/attributes/@kbStat": {
+            "id": "/attributes/@kbStat",
+            "fieldPath": "/attributes/@kbStat",
+            "rank": "zs"
+          }
+        }
+      },
+      "gantt": {
+        "id": "gantt",
+        "type": "gantt",
+        "rank": "F",
+        "columns": {
+          "/text": {
+            "id": "/text",
+            "fieldPath": "/text",
+            "rank": "7",
+            "width": 480
+          },
+          "/attributes/agent": {
+            "id": "/attributes/agent",
+            "fieldPath": "/attributes/agent",
+            "rank": "A",
+            "hidden": true
+          },
+          "/attributes/date": {
+            "id": "/attributes/date",
+            "fieldPath": "/attributes/date",
+            "rank": "F",
+            "hidden": true
+          },
+          "/attributes/assignee": {
+            "id": "/attributes/assignee",
+            "fieldPath": "/attributes/assignee",
+            "rank": "N",
+            "hidden": true
+          },
+          "/attributes/comment": {
+            "id": "/attributes/comment",
+            "fieldPath": "/attributes/comment",
+            "rank": "V",
+            "hidden": true
+          },
+          "/attributes/reaction": {
+            "id": "/attributes/reaction",
+            "fieldPath": "/attributes/reaction",
+            "rank": "c",
+            "hidden": true
+          },
+          "/attributes/timer": {
+            "id": "/attributes/timer",
+            "fieldPath": "/attributes/timer",
+            "rank": "k",
+            "hidden": true
+          },
+          "/attributes/media": {
+            "id": "/attributes/media",
+            "fieldPath": "/attributes/media",
+            "rank": "s",
+            "hidden": true
+          },
+          "/attributes/created/at": {
+            "id": "/attributes/created/at",
+            "fieldPath": "/attributes/created/at",
+            "rank": "t",
+            "hidden": true
+          },
+          "/attributes/created/by": {
+            "id": "/attributes/created/by",
+            "fieldPath": "/attributes/created/by",
+            "rank": "u",
+            "hidden": true
+          },
+          "/attributes/updated/at": {
+            "id": "/attributes/updated/at",
+            "fieldPath": "/attributes/updated/at",
+            "rank": "vF",
+            "hidden": true
+          },
+          "/attributes/updated/by": {
+            "id": "/attributes/updated/by",
+            "fieldPath": "/attributes/updated/by",
+            "rank": "wF",
+            "hidden": true
+          },
+          "/attributes/completed/at": {
+            "id": "/attributes/completed/at",
+            "fieldPath": "/attributes/completed/at",
+            "rank": "x",
+            "hidden": true
+          },
+          "/attributes/completed/by": {
+            "id": "/attributes/completed/by",
+            "fieldPath": "/attributes/completed/by",
+            "rank": "y",
+            "hidden": true
+          },
+          "/attributes/@kbCat": {
+            "id": "/attributes/@kbCat",
+            "fieldPath": "/attributes/@kbCat",
+            "rank": "z",
+            "hidden": false
+          },
+          "/attributes/@kbSrc": {
+            "id": "/attributes/@kbSrc",
+            "fieldPath": "/attributes/@kbSrc",
+            "rank": "zV",
+            "hidden": false
+          },
+          "/attributes/@kbSum": {
+            "id": "/attributes/@kbSum",
+            "fieldPath": "/attributes/@kbSum",
+            "rank": "zk",
+            "hidden": false
+          },
+          "/attributes/@kbStat": {
+            "id": "/attributes/@kbStat",
+            "fieldPath": "/attributes/@kbStat",
+            "rank": "zs",
+            "hidden": false
+          }
+        }
+      },
+      "table": {
+        "id": "table",
+        "type": "table",
+        "rank": "V",
+        "columns": {
+          "/text": {
+            "id": "/text",
+            "fieldPath": "/text",
+            "rank": "7",
+            "width": 480
+          },
+          "/attributes/agent": {
+            "id": "/attributes/agent",
+            "fieldPath": "/attributes/agent",
+            "rank": "A",
+            "hidden": true
+          },
+          "/attributes/date": {
+            "id": "/attributes/date",
+            "fieldPath": "/attributes/date",
+            "rank": "F",
+            "hidden": true
+          },
+          "/attributes/assignee": {
+            "id": "/attributes/assignee",
+            "fieldPath": "/attributes/assignee",
+            "rank": "N",
+            "hidden": true
+          },
+          "/attributes/comment": {
+            "id": "/attributes/comment",
+            "fieldPath": "/attributes/comment",
+            "rank": "V",
+            "hidden": true
+          },
+          "/attributes/reaction": {
+            "id": "/attributes/reaction",
+            "fieldPath": "/attributes/reaction",
+            "rank": "c",
+            "hidden": true
+          },
+          "/attributes/timer": {
+            "id": "/attributes/timer",
+            "fieldPath": "/attributes/timer",
+            "rank": "k",
+            "hidden": true
+          },
+          "/attributes/media": {
+            "id": "/attributes/media",
+            "fieldPath": "/attributes/media",
+            "rank": "s",
+            "hidden": true
+          },
+          "/attributes/created/at": {
+            "id": "/attributes/created/at",
+            "fieldPath": "/attributes/created/at",
+            "rank": "t",
+            "hidden": true
+          },
+          "/attributes/created/by": {
+            "id": "/attributes/created/by",
+            "fieldPath": "/attributes/created/by",
+            "rank": "u",
+            "hidden": true
+          },
+          "/attributes/updated/at": {
+            "id": "/attributes/updated/at",
+            "fieldPath": "/attributes/updated/at",
+            "rank": "vF",
+            "hidden": true
+          },
+          "/attributes/updated/by": {
+            "id": "/attributes/updated/by",
+            "fieldPath": "/attributes/updated/by",
+            "rank": "wF",
+            "hidden": true
+          },
+          "/attributes/completed/at": {
+            "id": "/attributes/completed/at",
+            "fieldPath": "/attributes/completed/at",
+            "rank": "x",
+            "hidden": true
+          },
+          "/attributes/completed/by": {
+            "id": "/attributes/completed/by",
+            "fieldPath": "/attributes/completed/by",
+            "rank": "y",
+            "hidden": true
+          },
+          "/attributes/@kbCat": {
+            "id": "/attributes/@kbCat",
+            "fieldPath": "/attributes/@kbCat",
+            "rank": "z",
+            "hidden": false
+          },
+          "/attributes/@kbSrc": {
+            "id": "/attributes/@kbSrc",
+            "fieldPath": "/attributes/@kbSrc",
+            "rank": "zV",
+            "hidden": false
+          },
+          "/attributes/@kbSum": {
+            "id": "/attributes/@kbSum",
+            "fieldPath": "/attributes/@kbSum",
+            "rank": "zk",
+            "hidden": false
+          },
+          "/attributes/@kbStat": {
+            "id": "/attributes/@kbStat",
+            "fieldPath": "/attributes/@kbStat",
+            "rank": "zs",
+            "hidden": false
+          }
+        }
+      }
+    },
+    "fields": {
+      "@kbCat": {
+        "type": "Select",
+        "displayName": "Category",
+        "options": {
+          "cat-tech": {
+            "id": "cat-tech",
+            "name": "Technology",
+            "color": "#6366f1",
+            "rank": "0"
+          },
+          "cat-science": {
+            "id": "cat-science",
+            "name": "Science",
+            "color": "#10b981",
+            "rank": "1"
+          },
+          "cat-business": {
+            "id": "cat-business",
+            "name": "Business",
+            "color": "#f59e0b",
+            "rank": "2"
+          },
+          "cat-health": {
+            "id": "cat-health",
+            "name": "Health",
+            "color": "#ef4444",
+            "rank": "3"
+          },
+          "cat-other": {
+            "id": "cat-other",
+            "name": "Other",
+            "color": "#8b5cf6",
+            "rank": "4"
+          }
+        }
+      },
+      "@kbSrc": {
+        "type": "string",
+        "displayName": "Source URL"
+      },
+      "@kbSum": {
+        "type": "string",
+        "displayName": "Summary"
+      },
+      "@kbStat": {
+        "type": "Select",
+        "displayName": "Status",
+        "options": {
+          "stat-new": {
+            "id": "stat-new",
+            "name": "New",
+            "color": "#94a3b8",
+            "rank": "0"
+          },
+          "stat-processing": {
+            "id": "stat-processing",
+            "name": "Processing",
+            "color": "#f59e0b",
+            "rank": "1"
+          },
+          "stat-absorbed": {
+            "id": "stat-absorbed",
+            "name": "Absorbed",
+            "color": "#10b981",
+            "rank": "2"
+          }
+        }
+      }
+    }
+  },
+  "preferences": {
+    "defaultView": "table",
+    "avatar": {
+      "type": "emoji",
+      "value": "⚕️"
+    }
+  }
+}

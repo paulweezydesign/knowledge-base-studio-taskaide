@@ -1,0 +1,184 @@
+{
+  "version": "2",
+  "flowTitle": "Add Knowledge — Web (Webhook)",
+  "trigger": {
+    "valid": true,
+    "type": "WEBHOOK",
+    "settings": {
+      "input": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "Input for url"
+          },
+          "title": {
+            "type": "string",
+            "description": "Input for title"
+          },
+          "category": {
+            "type": "string",
+            "anyOf": [
+              {
+                "const": "cat-tech",
+                "title": "Technology"
+              },
+              {
+                "const": "cat-science",
+                "title": "Science"
+              },
+              {
+                "const": "cat-business",
+                "title": "Business"
+              },
+              {
+                "const": "cat-health",
+                "title": "Health"
+              },
+              {
+                "const": "cat-other",
+                "title": "Other"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "actions": [
+    {
+      "name": "a1b2c3d4-1111-4e5f-8a9b-000000000001",
+      "valid": true,
+      "displayName": "Scrape webpage",
+      "type": "PIECE",
+      "settings": {
+        "pieceName": "@taskade/automade-internalpiece-media",
+        "pieceVersion": "1.0.0",
+        "actionName": "website.extract",
+        "input": {
+          "websiteUrl": "{{ trigger[\"body\"][\"url\"] }}",
+          "errorBehavior": "continue"
+        }
+      }
+    },
+    {
+      "name": "a1b2c3d4-2222-4e5f-8a9b-000000000002",
+      "valid": true,
+      "displayName": "AI summarize research",
+      "type": "PIECE",
+      "settings": {
+        "pieceName": "@taskade/automade-internalpiece-openai",
+        "pieceVersion": "1.0.0",
+        "actionName": "ai.generate",
+        "input": {
+          "input": "{{ a1b2c3d4-1111-4e5f-8a9b-000000000001[\"content\"] }}",
+          "prompt": "You are a research summarizer. Given raw webpage text, produce a concise 2-3 sentence summary that highlights the most important findings, key implications, and why it matters. Keep tone factual and clear."
+        }
+      }
+    },
+    {
+      "name": "a1b2c3d4-3333-4e5f-8a9b-000000000003",
+      "valid": false,
+      "displayName": "Create Knowledge Base entry",
+      "type": "PIECE",
+      "settings": {
+        "pieceName": "@taskade/automade-internalpiece-taskade",
+        "pieceVersion": "1.0.0",
+        "actionName": "task.create",
+        "input": {
+          "fields": {
+            "@kbCat": {
+              "data": {
+                "value": "{{ trigger[\"body\"][\"category\"] }}"
+              },
+              "rank": "3",
+              "fieldId": "@kbCat"
+            },
+            "@kbSrc": {
+              "data": {
+                "value": "{{ trigger[\"body\"][\"url\"] }}"
+              },
+              "rank": "2",
+              "fieldId": "@kbSrc"
+            },
+            "@kbSum": {
+              "data": {
+                "value": "{{ a1b2c3d4-2222-4e5f-8a9b-000000000002[\"result\"] }}"
+              },
+              "rank": "0",
+              "fieldId": "@kbSum"
+            },
+            "@kbStat": {
+              "data": {
+                "value": "stat-absorbed"
+              },
+              "rank": "1",
+              "fieldId": "@kbStat"
+            }
+          },
+          "content": "{{ trigger[\"body\"][\"title\"] }}",
+          "position": "afterbegin",
+          "projectId": {
+            "type": "flow-template-variable-input-type",
+            "id": "8eRokCUHJTw5e5Qd"
+          }
+        }
+      }
+    },
+    {
+      "name": "a1b2c3d4-4444-4e5f-8a9b-000000000004",
+      "valid": false,
+      "displayName": "Add summary to Agent knowledge",
+      "type": "PIECE",
+      "settings": {
+        "pieceName": "@taskade/automade-internalpiece-openai",
+        "pieceVersion": "1.0.0",
+        "actionName": "agent.add_knowledge.v2",
+        "input": {
+          "title": "{{ a1b2c3d4-1111-4e5f-8a9b-000000000001[\"title\"] }}",
+          "agentId": {
+            "type": "flow-template-variable-input-type",
+            "id": "01KMA6456NA7PWFNNS65QY2J1J"
+          },
+          "knowledge": "{{ a1b2c3d4-2222-4e5f-8a9b-000000000002[\"result\"] }}",
+          "knowledgeType": "website"
+        }
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "http_response",
+      "body": {
+        "type": "json",
+        "data": {
+          "type": "basic",
+          "payload": [
+            {
+              "status": "success"
+            },
+            {
+              "url": "{{ trigger[\"body\"][\"url\"] }}"
+            }
+          ]
+        }
+      },
+      "key": "trigger"
+    }
+  ],
+  "variables": {
+    "8eRokCUHJTw5e5Qd": {
+      "id": "8eRokCUHJTw5e5Qd",
+      "rank": "V",
+      "type": "string",
+      "format": "taskade-project-id"
+    },
+    "01KMA6456NA7PWFNNS65QY2J1J": {
+      "id": "01KMA6456NA7PWFNNS65QY2J1J",
+      "rank": "k",
+      "type": "string",
+      "format": "taskade-space-agent-id"
+    }
+  }
+}

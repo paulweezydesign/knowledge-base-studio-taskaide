@@ -1,0 +1,149 @@
+{
+  "version": "2",
+  "flowTitle": "Add Knowledge — Upload (Webhook)",
+  "trigger": {
+    "valid": true,
+    "type": "WEBHOOK",
+    "settings": {
+      "input": {
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "string",
+            "title": "Upload file",
+            "format": "file-uri",
+            "description": "Upload PDF, DOCX, TXT, or plain text file"
+          },
+          "title": {
+            "type": "string",
+            "description": "Input for title"
+          },
+          "category": {
+            "type": "string",
+            "anyOf": [
+              {
+                "const": "cat-tech",
+                "title": "Technology"
+              },
+              {
+                "const": "cat-science",
+                "title": "Science"
+              },
+              {
+                "const": "cat-business",
+                "title": "Business"
+              },
+              {
+                "const": "cat-health",
+                "title": "Health"
+              },
+              {
+                "const": "cat-other",
+                "title": "Other"
+              }
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "actions": [
+    {
+      "name": "b2c3d4e5-1111-4e5f-8a9b-000000000005",
+      "valid": false,
+      "displayName": "Add uploaded file to Agent knowledge",
+      "type": "PIECE",
+      "settings": {
+        "pieceName": "@taskade/automade-internalpiece-openai",
+        "pieceVersion": "1.0.0",
+        "actionName": "agent.add_knowledge.v2",
+        "input": {
+          "title": "{{ trigger[\"body\"][\"title\"] }}",
+          "agentId": {
+            "type": "flow-template-variable-input-type",
+            "id": "01KMA6456NA7PWFNNS65QY2J1J"
+          },
+          "knowledge": "{{ trigger[\"body\"][\"file\"] }}",
+          "knowledgeType": "file"
+        }
+      }
+    },
+    {
+      "name": "b2c3d4e5-2222-4e5f-8a9b-000000000006",
+      "valid": false,
+      "displayName": "Create Knowledge Base entry for upload",
+      "type": "PIECE",
+      "settings": {
+        "pieceName": "@taskade/automade-internalpiece-taskade",
+        "pieceVersion": "1.0.0",
+        "actionName": "task.create",
+        "input": {
+          "fields": {
+            "@kbSrc": {
+              "data": {
+                "value": "Uploaded file"
+              },
+              "rank": "2",
+              "fieldId": "@kbSrc"
+            },
+            "@kbSum": {
+              "data": {
+                "value": "Uploaded file: {{ trigger[\"body\"][\"file\"][\"name\"] }}"
+              },
+              "rank": "0",
+              "fieldId": "@kbSum"
+            },
+            "@kbStat": {
+              "data": {
+                "value": "stat-absorbed"
+              },
+              "rank": "1",
+              "fieldId": "@kbStat"
+            }
+          },
+          "content": "{{ trigger[\"body\"][\"title\"] }}",
+          "position": "afterbegin",
+          "projectId": {
+            "type": "flow-template-variable-input-type",
+            "id": "8eRokCUHJTw5e5Qd"
+          }
+        }
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "type": "http_response",
+      "body": {
+        "type": "json",
+        "data": {
+          "type": "basic",
+          "payload": [
+            {
+              "status": "success"
+            },
+            {
+              "fileName": "{{ trigger[\"body\"][\"file\"][\"name\"] }}"
+            }
+          ]
+        }
+      },
+      "key": "trigger"
+    }
+  ],
+  "variables": {
+    "01KMA6456NA7PWFNNS65QY2J1J": {
+      "id": "01KMA6456NA7PWFNNS65QY2J1J",
+      "rank": "V",
+      "type": "string",
+      "format": "taskade-space-agent-id"
+    },
+    "8eRokCUHJTw5e5Qd": {
+      "id": "8eRokCUHJTw5e5Qd",
+      "rank": "k",
+      "type": "string",
+      "format": "taskade-project-id"
+    }
+  }
+}

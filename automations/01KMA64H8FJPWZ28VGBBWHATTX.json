@@ -1,0 +1,150 @@
+{
+  "version": "2",
+  "flowTitle": "Research → Summarize → Absorb → Notify",
+  "trigger": {
+    "valid": false,
+    "displayName": "New task added to Research Queue",
+    "type": "PIECE_TRIGGER",
+    "settings": {
+      "pieceName": "@taskade/automade-internalpiece-taskade",
+      "pieceVersion": "1.0.0",
+      "triggerName": "task.added",
+      "input": {}
+    }
+  },
+  "actions": [
+    {
+      "name": "a1111111-1111-1111-1111-111111111111",
+      "valid": true,
+      "displayName": "Search Web for Research Topic",
+      "type": "PIECE",
+      "settings": {
+        "pieceName": "@taskade/automade-internalpiece-media",
+        "pieceVersion": "1.0.0",
+        "actionName": "web.search",
+        "input": {
+          "query": "{{ trigger[\"nodeText\"] }} research overview latest findings"
+        }
+      }
+    },
+    {
+      "name": "a2222222-2222-2222-2222-222222222222",
+      "valid": true,
+      "displayName": "AI: Generate Research Summary",
+      "type": "PIECE",
+      "settings": {
+        "pieceName": "@taskade/automade-internalpiece-openai",
+        "pieceVersion": "1.0.0",
+        "actionName": "ai.generate",
+        "input": {
+          "input": "Topic: {{ trigger[\"nodeText\"] }}\n\nResearch Results:\n{{ a1111111-1111-1111-1111-111111111111[\"summary\"] }}",
+          "prompt": "You are a research summarizer. Given the following web research results about a topic, write a concise, insightful 2-3 sentence summary suitable for a knowledge base entry. Focus on the most important findings, key implications, and why this matters. Be clear and factual."
+        }
+      }
+    },
+    {
+      "name": "a3333333-3333-3333-3333-333333333333",
+      "valid": false,
+      "displayName": "Add Entry to Knowledge Base",
+      "type": "PIECE",
+      "settings": {
+        "pieceName": "@taskade/automade-internalpiece-taskade",
+        "pieceVersion": "1.0.0",
+        "actionName": "task.create",
+        "input": {
+          "fields": {
+            "@kbSrc": {
+              "data": {
+                "value": "Web Research (Automated)"
+              },
+              "rank": "2",
+              "fieldId": "@kbSrc"
+            },
+            "@kbSum": {
+              "data": {
+                "value": "{{ a2222222-2222-2222-2222-222222222222[\"result\"] }}"
+              },
+              "rank": "0",
+              "fieldId": "@kbSum"
+            },
+            "@kbStat": {
+              "data": {
+                "value": "stat-absorbed"
+              },
+              "rank": "1",
+              "fieldId": "@kbStat"
+            }
+          },
+          "content": "{{ trigger[\"nodeText\"] }}",
+          "position": "afterbegin",
+          "projectId": {
+            "type": "flow-template-variable-input-type",
+            "id": "8eRokCUHJTw5e5Qd"
+          }
+        }
+      }
+    },
+    {
+      "name": "a4444444-4444-4444-4444-444444444444",
+      "valid": false,
+      "displayName": "Add Summary to Agent Knowledge",
+      "type": "PIECE",
+      "settings": {
+        "pieceName": "@taskade/automade-internalpiece-openai",
+        "pieceVersion": "1.0.0",
+        "actionName": "agent.add_knowledge.v2",
+        "input": {
+          "title": "{{ trigger[\"nodeText\"] }}",
+          "agentId": {
+            "type": "flow-template-variable-input-type",
+            "id": "01KMA6456NA7PWFNNS65QY2J1J"
+          },
+          "knowledge": "Research Topic: {{ trigger[\"nodeText\"] }}\n\nSummary: {{ a2222222-2222-2222-2222-222222222222[\"result\"] }}\n\nSource: Web Research via Automated Knowledge Curator",
+          "knowledgeType": "text"
+        }
+      }
+    },
+    {
+      "name": "a5555555-5555-5555-5555-555555555555",
+      "valid": false,
+      "displayName": "Notify: Knowledge Base Expanded",
+      "type": "PIECE",
+      "settings": {
+        "pieceName": "@taskade/automade-internalpiece-taskade",
+        "pieceVersion": "1.0.0",
+        "actionName": "task.create",
+        "input": {
+          "fields": {
+            "@kbStat": {
+              "data": {
+                "value": "stat-absorbed"
+              },
+              "rank": "0",
+              "fieldId": "@kbStat"
+            }
+          },
+          "content": "🧠 Knowledge Expanded: \"{{ trigger[\"nodeText\"] }}\" has been researched, summarized, and absorbed into the agent's knowledge base automatically.",
+          "position": "afterbegin",
+          "projectId": {
+            "type": "flow-template-variable-input-type",
+            "id": "8eRokCUHJTw5e5Qd"
+          }
+        }
+      }
+    }
+  ],
+  "variables": {
+    "8eRokCUHJTw5e5Qd": {
+      "id": "8eRokCUHJTw5e5Qd",
+      "rank": "V",
+      "type": "string",
+      "format": "taskade-project-id"
+    },
+    "01KMA6456NA7PWFNNS65QY2J1J": {
+      "id": "01KMA6456NA7PWFNNS65QY2J1J",
+      "rank": "k",
+      "type": "string",
+      "format": "taskade-space-agent-id"
+    }
+  }
+}
